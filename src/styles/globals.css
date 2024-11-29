@@ -1,0 +1,287 @@
+body {
+    margin: 0;
+    background: url(/images/fondoApp.png) no-repeat bottom center fixed,
+        linear-gradient(to bottom, #ebdcf8, #7f8bf1) no-repeat center fixed;
+    background-size: contain;
+    font-family: "Itim", cursive !important;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerGeneral {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    box-shadow: 0px 6px 12px -2px rgba(50, 50, 93, 0.25),
+        0px 3px 7px -3px rgba(0, 0, 0, 0.3);
+
+
+}
+
+.blue {
+    color: #4289ef;
+
+}
+
+.yellow {
+    color: #ffbd59;
+
+}
+
+.containerCards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+    width: 55%;
+
+}
+
+.start {
+    height: 60px;
+    width: 200px;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: white;
+}
+
+.card-init {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 150px;
+    border-radius: 15px;
+    border: none;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-init:hover {
+    color: white;
+    background-color: #b46bf9;
+}
+
+.contectGame {
+    height: 80vh;
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contectBoxGame {
+    width: 100%;
+
+
+}
+
+.buttonPlay {
+    background-color: transparent;
+    border-radius: 100%;
+    border: none;
+}
+
+.container-cards-game {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 70%;
+    justify-content: space-between;
+}
+
+
+
+.card-content-game {
+    background: #fff;
+    font-family: "VT323", monospace;
+    font-size: 35px;
+    height: 30%;
+    color: #4741d7;
+    border: 2px solid #4741d7;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+.card-content-game:hover {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid #e3c041;
+    /* background-color: transparent;
+    animation: colorChange 1s infinite alternate; */
+}
+
+/* @keyframes colorChange {
+    0% { color: #b827fc; }
+    25% { color: #2c90fc; }
+    50% { color: #b8fd33; }
+    75% { color: #fec837; }
+    100% { color: #fd1892; }
+} */
+
+.card-content-game::after {
+    content: "";
+    background: #ffd74c;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: -20%;
+    right: -20%;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s ease;
+
+}
+
+.card-content-game:hover::after {
+    transform: skewX(-45deg) scale(1, 1);
+    transition: all 0.5s ease-out;
+}
+
+.card-content-game:disabled {
+    background-color: #b9e9ba;
+    color: transparent;
+    /* Oculta el texto */
+    border-color: #4CAF50;
+    cursor: not-allowed;
+    position: relative;
+    text-shadow: none;
+}
+
+.card-content-game:disabled::after {
+    content: "✔";
+    /* Símbolo de check */
+    color: #4CAF50;
+    font-size: 60px;
+    /* Tamaño del icono */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    /* Centra el icono */
+    z-index: 1;
+    /* Coloca el icono por encima del texto */
+    background: none;
+}
+
+
+@font-face {
+    font-family: 'BrightSight';
+    src: url('/fonts/FontsFree-Net-brightsight02.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'BrightSight', sans-serif;
+}
+
+.text-effect {
+    width: 500px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 2.5rem;
+    /* Ajusta el tamaño del texto */
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #ff66c4;
+    /* Color principal */
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    text-shadow:
+        3px 2px #00ffff,
+        /* Sombra cian hacia abajo-derecha */
+        -3px -2px #ff00ff;
+    /* Sombra magenta hacia arriba-izquierda */
+}
+
+.textUnderline {
+    text-decoration: underline;
+    font-size: 30px;
+}
+
+.questionBox {
+    padding: 15px;
+    color: white;
+    background-color: #b46bf9;
+    border-radius: 30px;
+}
+
+
+/* Contenedor principal */
+.learning-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Contenedor del video */
+.video-container {
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Título del video */
+.video-title {
+    margin-top: 40px;
+    font-size: 30px;
+    color: #212529;
+    font-weight: 400;
+}
+
+/* Estilos del video */
+.video-element {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.buttonToBack {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    background-color: #fa24a8;
+    color: white;
+    border: 1px solid #ff009d;
+    position: absolute;
+    left: 390px;
+    top: 86px;
+}
+
+.buttonToBack:hover {
+    background-color: #e7219b;
+}
+
+.contentInitForm {
+    background: white;
+    height: 50%;
+    width: 50%;
+    padding: 20px;
+
+}

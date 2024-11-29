@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model Usuario {
+  id_usuario     Int       @id @default(autoincrement())
+  nombre_usuario String    @unique
+  contrasena     String
+  rol            Rol
+  alumnos        Alumno[]  @relation("UsuarioAlumnos")
+
+  @@map("usuarios")
+}
+
+model Alumno {
+  id_alumno  Int      @id @default(autoincrement())
+  id_usuario Int
+  nombre     String
+  usuario    Usuario  @relation("UsuarioAlumnos", fields: [id_usuario], references: [id_usuario])
+
+  @@map("alumnos")
+}
+
+enum Rol {
+  alumno
+  profesor
+}
